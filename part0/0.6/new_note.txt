@@ -1,0 +1,8 @@
+/* create new note */
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->browser: new_note_spa
+
+note over browser:
+will push note to notes on the server
+redrawNotes will run that renders notes to display
+end note
