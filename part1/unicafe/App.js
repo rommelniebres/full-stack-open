@@ -4,7 +4,15 @@ const Header = ({title}) => <h1>{title}</h1>
 
 const Button = ({handleClick, text}) => <button onClick={handleClick}>{text}</button>
 
-const StatisticLine = ({text, value}) => <p>{text} {value}</p>
+const StatisticLine = ({text, value}) => {
+  return(
+    <tr>
+      <td>{text}</td>
+      <td>{value}</td>
+    </tr>
+  )
+}
+  
 
 const Statistics = ({title, good, neutral, bad}) => {
   const total = good + neutral + bad;
@@ -20,19 +28,22 @@ const Statistics = ({title, good, neutral, bad}) => {
   return ( 
     <>
       <h1>{title}</h1>
-      <StatisticLine text="good" value ={good} />
-      <StatisticLine text="neutral" value ={neutral} />
-      <StatisticLine text="bad" value ={bad} />
-      <StatisticLine text="total" value ={total} />
-      <StatisticLine text="average" value ={average} />
-      <StatisticLine text="positive" value ={positive} />
+      <table>
+        <StatisticLine text="good" value ={good} />
+        <StatisticLine text="neutral" value ={neutral} />
+        <StatisticLine text="bad" value ={bad} />
+        <StatisticLine text="total" value ={total} />
+        <StatisticLine text="average" value ={average} />
+        <StatisticLine text="positive" value ={positive} />
+      </table>
+      
     </>
   )
 }
 
 const App = () => {
-  const headerTitle = 'give feedback'
-  const statisticsTitle = 'statistics'
+  const headerTitle = 'Give Feedback'
+  const statisticsTitle = 'Statistics'
   // save clicks of each button to its own state
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
