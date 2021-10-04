@@ -4,10 +4,10 @@ import Total from './Total'
 
 const Content = ({ course }) => {
   return (
-    <div>
-      <Part parts={course.parts} />
+    <>
+      {course.parts.map(part => <Part key={part.id} part={part} />)}
       <Total parts={course.parts} />
-    </div>
+    </>
   )
 }
   
