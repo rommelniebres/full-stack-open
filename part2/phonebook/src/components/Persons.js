@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Persons = ({ persons }) => {
+const Persons = ({ persons, deleteRecord }) => {
   return (
     persons.map(person => 
-      <p key={person.name}>{person.name} {person.number}</p>
+      <div key={person.id}>
+        <span className='person'>{person.name} {person.number} </span>
+        <button onClick={() => deleteRecord(person.id, person.name)}>delete</button>
+      </div>
     )
   )
 }
