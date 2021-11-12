@@ -1,10 +1,11 @@
 POST http://localhost:3001/api/blogs
-##
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvbW1lbDIiLCJpZCI6IjYxOGQyMmM2YmE0MTc5MDFlZmE5MDUxNyIsImlhdCI6MTYzNjcwNzIzN30.z6qmtiWqRTJoCId1PGXemhgsA8n5zaJloWEQ2dfOGts
 
 {
-    "title": "First blog", 
+    "title": "SSSSAAS blog", 
     "author": "Myself",
     "url": "myblog.com",
-    "likes": "5"
+    "likes": "5",
+    "userId": "618d1af645db19adfc13a435"
 }

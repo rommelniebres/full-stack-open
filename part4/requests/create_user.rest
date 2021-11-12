@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/users
+##
+Content-Type: application/json
+
+{
+    "blogs": [],
+    "username": "rommel2",
+    "name": "rommel2",
+    "password": "codingisfun"
+}

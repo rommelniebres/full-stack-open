@@ -4,23 +4,29 @@
   "description": "blog list application",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "jest --verbose"
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand"
   },
   "author": "Rommel",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
-    "mongoose": "^6.0.12"
+    "mongoose": "^6.0.12",
+    "mongoose-unique-validator": "^3.0.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^8.1.0",
     "jest": "^27.3.1",
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.14",
+    "supertest": "^6.1.6"
   },
   "jest": {
     "testEnvironment": "node"
