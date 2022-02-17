@@ -1,6 +1,6 @@
-import { useState } from 'react' 
+import { useState } from 'react'
 
-const Blog = ({blog, likeBlog, deleteBlog, user}) => {
+const Blog = ({ blog, likeBlog, deleteBlog, user }) => {
   const [view, setView] = useState(false)
   const hideWhenView = { display: view ? 'none' : '' }
   const showWhenView = { display: view ? '' : 'none' }
@@ -18,9 +18,9 @@ const Blog = ({blog, likeBlog, deleteBlog, user}) => {
     marginBottom: 5
   }
 
-  const deleteBtnStyle = { 
-    backgroundColor: '#f44336', 
-    color: 'white', 
+  const deleteBtnStyle = {
+    backgroundColor: '#f44336',
+    color: 'white',
     display: showDelete
   }
 
@@ -47,22 +47,22 @@ const Blog = ({blog, likeBlog, deleteBlog, user}) => {
       url: blog.url,
     })
   }
-  
+
   return (
     <div style={blogStyle}>
       <div style={hideWhenView}>
-        <span> {blog.title} </span> 
+        <span> {blog.title} </span>
         <button onClick={toggleView}>view</button>
-      </div>  
+      </div>
       <div style={showWhenView}>
-        <span> {blog.title} </span> 
+        <span> {blog.title} </span>
         <button onClick={toggleView}>hide</button>
-        <p> {blog.url} </p> 
-        <p> <span> {blog.likes} Likes</span> <button onClick={incrementLike}>like</button> </p> 
-        <p> {blog.author} </p> 
+        <p> {blog.url} </p>
+        <p> <span> {blog.likes} Likes</span> <button onClick={incrementLike}>like</button> </p>
+        <p> {blog.author} </p>
         <button style={deleteBtnStyle} onClick={removeBlog}>delete</button>
-      </div>  
-    </div> 
+      </div>
+    </div>
   )
 }
 

@@ -5,7 +5,7 @@ const Notification = ({ message }) => {
     return null
   }
 
-  else if (!message.includes("Error")) {
+  else if (!message.includes('Error')) {
     return (
       <div className="success">
         {message}

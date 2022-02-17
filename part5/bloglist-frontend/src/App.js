@@ -10,8 +10,8 @@ const App = () => {
   const [blogs, setBlogs] = useState([])
   const [user, setUser] = useState(null)
   // const [loginVisible, setLoginVisible] = useState(false)
-  const [username, setUsername] = useState('') 
-  const [password, setPassword] = useState('') 
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState(null)
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const App = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault()
-   
+
     try {
       const user = await loginService.login({
         username, password,
@@ -37,7 +37,7 @@ const App = () => {
 
       window.localStorage.setItem(
         'loggedBlogappUser', JSON.stringify(user)
-      ) 
+      )
 
       blogService.setToken(user.token)
       setUser(user)
@@ -94,7 +94,7 @@ const App = () => {
   const likeBlog = async (blogObject) => {
     try {
       const returnedUpdatedBlog = await blogService.updateBlog(blogObject)
-      
+
       setBlogs(blogs.map(blog => blog.id !== returnedUpdatedBlog.id ? blog : returnedUpdatedBlog).sort((blogA, blogB) => blogB.likes - blogA.likes))
 
       setErrorMessage(
@@ -118,8 +118,8 @@ const App = () => {
         await blogService.deleteBlog(blogObject)
 
         const blogToDelete = blogs.map(blog => blog.id).indexOf(blogObject.id)
-        blogs.splice(blogToDelete, 1);
-        
+        blogs.splice(blogToDelete, 1)
+
         setBlogs(blogs.sort((blogA, blogB) => blogB.likes - blogA.likes))
 
         setErrorMessage(
@@ -145,7 +145,7 @@ const App = () => {
       <BlogForm createBlog={createBlog} />
     </Togglable>
   )
-  
+
   if (user === null) {
     return (
       <div>
@@ -154,7 +154,7 @@ const App = () => {
         <form onSubmit={handleLogin}>
           <div>
             username
-              <input
+            <input
               type="text"
               value={username}
               name="Username"
@@ -163,7 +163,7 @@ const App = () => {
           </div>
           <div>
             password
-              <input
+            <input
               type="password"
               value={password}
               name="Password"
@@ -171,7 +171,7 @@ const App = () => {
             />
           </div>
           <button type="submit">login</button>
-        </form>  
+        </form>
       </div>
     )
   }
