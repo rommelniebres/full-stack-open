@@ -50,11 +50,11 @@ const Blog = ({ blog, likeBlog, deleteBlog, user }) => {
 
   return (
     <div style={blogStyle}>
-      <div style={hideWhenView}>
-        <span> {blog.title} </span>
+      <div style={hideWhenView} className="defaultView">
+        <span> {blog.title} by {blog.author} </span>
         <button onClick={toggleView}>view</button>
       </div>
-      <div style={showWhenView}>
+      <div style={showWhenView} className="expandedView">
         <span> {blog.title} </span>
         <button onClick={toggleView}>hide</button>
         <p> {blog.url} </p>
