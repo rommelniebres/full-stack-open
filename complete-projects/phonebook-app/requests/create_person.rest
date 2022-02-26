@@ -1,0 +1,8 @@
+POST https://fierce-ravine-65893.herokuapp.com/api/persons
+# POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "John Dsoee", 
+    "number": "99-99-9999999"
+}
