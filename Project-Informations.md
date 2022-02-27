@@ -72,8 +72,9 @@ c Testing React apps
 d End to end testing
 
 Projects/Exercises:
-  - bloglist-frontend complete frontend application
+  - Blog-App complete frontend and backend application
   - part2-notes - Example of the course
+
 
 backup folder only for temporary files
 
