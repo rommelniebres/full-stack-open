@@ -10,6 +10,7 @@ const Notification = () => {
   const hide = {
     display: 'none'
   }
+  
   return (
     <div style={ notification ? style : hide }>
       {notification}
