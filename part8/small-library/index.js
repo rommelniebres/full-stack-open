@@ -177,7 +177,9 @@ const resolvers = {
     editAuthor: (root, args) => {
       const author = authors.find(p => p.name === args.name)
       if (!author) {
-        return null
+        throw new UserInputError('Author not found!', {
+          invalidArgs: args.name,
+        })
       }
   
       const updatedAuthor = { ...author, born: args.setBornTo }
